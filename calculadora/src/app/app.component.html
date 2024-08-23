@@ -1,2 +1,15 @@
-
-<app-calculator-view></app-calculator-view>
+<div class="calculadora">
+    <app-calculator-view
+      [valor1]="valor1"
+      [valor2]="valor2"
+      [resultado]="resultado"
+      (valor1Change)="valor1 = $event"
+      (valor2Change)="valor2 = $event"
+    ></app-calculator-view>
+  
+    <app-calculator-actions
+      (operacionSeleccionada)="calcular($event)"
+      (limpiarSeleccion)="limpiar()"
+    ></app-calculator-actions>
+  </div>
+  

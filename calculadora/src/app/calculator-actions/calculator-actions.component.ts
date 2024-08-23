@@ -1,15 +1,20 @@
-import { Component } from '@angular/core';
-import { CalculatorViewComponent } from '../calculator-view/calculator-view.component';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-calculator-actions',
   standalone: true,
-  imports: [CalculatorViewComponent],
   templateUrl: './calculator-actions.component.html',
-  styleUrl: './calculator-actions.component.css'
+  styleUrls: ['./calculator-actions.component.css']
 })
 export class CalculatorActionsComponent {
+  @Output() operacionSeleccionada = new EventEmitter<string>();
+  @Output() limpiarSeleccion = new EventEmitter<void>();
 
+  operacion(operador: string) {
+    this.operacionSeleccionada.emit(operador);
+  }
 
-  
+  limpiar() {
+    this.limpiarSeleccion.emit();
+  }
 }

@@ -1,23 +1,25 @@
-<div class="calculadora">
-    <h2>Calculadora</h2>
-    <div class="input-group">
-        <label for="valor1">Valor 1</label>
-        <input type="number" id="valor1" placeholder="Ingrese el primer valor">
-    </div>
-    <div class="input-group">
-        <label for="valor2">Valor 2</label>
-        <input type="number" id="valor2" placeholder="Ingrese el segundo valor">
-    </div>
-    <div class="resultado">
-        <label for="resultado">Resultado</label>
-        <input type="text" id="resultado" readonly>
-    </div>
-    <div class="botones">
-        <button>+</button>
-        <button>-</button>
-        <button>^</button>
-        <button>x</button>
-        <button>÷</button>
-        <button>CE</button>
-    </div>
+<h2>Calculadora</h2>
+<div class="input-group">
+  <label for="valor1">Valor 1</label>
+  <input
+    type="number"
+    id="valor1"
+    placeholder="Ingrese el primer valor"
+    [value]="valor1"
+    (input)="onValor1Change($event)"
+  />
+</div>
+<div class="input-group">
+  <label for="valor2">Valor 2</label>
+  <input
+    type="number"
+    id="valor2"
+    placeholder="Ingrese el segundo valor"
+    [value]="valor2"
+    (input)="onValor2Change($event)"
+  />
+</div>
+<div class="resultado">
+  <label for="resultado">Resultado</label>
+  <input type="number" id="resultado" readonly [value]="resultado" />
 </div>
